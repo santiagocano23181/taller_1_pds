@@ -40,7 +40,7 @@ public class TareaController {
         if (Objects.isNull(tarea1)) {
             throw new UsuarioException("No se encontró la tarea", HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(tarea1);
     }
 
     @DeleteMapping("/{id}")

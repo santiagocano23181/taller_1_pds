@@ -56,7 +56,7 @@ public class UsuarioController {
         if (Objects.isNull(usuario1)) {
             throw new UsuarioException("No se encontró el usuario", HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(usuario1);
     }
 
     @DeleteMapping("/{id}")

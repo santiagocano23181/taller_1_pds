@@ -30,6 +30,7 @@ public class FilaController {
 
     @PostMapping
     public ResponseEntity<?> createFila(@RequestBody Fila fila) {
+        System.out.println(fila);
         int duracion = fila.getDuracion();
         if(duracion < 1 || duracion > 60){
             throw  new FilaException("La duracion debe estar en un rango de 1 y 60", HttpStatus.BAD_REQUEST);
@@ -48,7 +49,7 @@ public class FilaController {
         if (Objects.isNull(fila1)) {
             throw new FilaException("No se encontró la fila", HttpStatus.NOT_FOUND);
         }
-        return ResponseEntity.noContent().build();
+        return ResponseEntity.ok(fila1);
     }
 
     @DeleteMapping("/{id}")
