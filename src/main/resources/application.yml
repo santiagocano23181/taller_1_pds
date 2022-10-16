@@ -6,4 +6,4 @@ spring:
   application:
     name: task-app
   profiles:
-    active: prod
+    active: dev
